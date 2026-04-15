@@ -75,6 +75,13 @@ def test_complexit(list_of_n):
     plt.title("Ukázkový graf měření")
     plt.show()
 
+
+def pattern_search(sequence, pattern):
+    indexy = {}
+    while
+    return indexy
+
+
 def main():
     my_data = read_data("sequential.json","unordered_numbers")
     found_number = linear_search(my_data, 0)
