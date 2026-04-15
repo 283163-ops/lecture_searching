@@ -43,7 +43,7 @@ def linear_search(searched_data, searched_number):
 
 def binary_search(searched_data, searched_number):
     left = 0
-    right = len(searched_data)
+    right = len(searched_data) - 1
     while left <= right:
         middle = (left + right) // 2
         if searched_data[middle] == searched_number:
