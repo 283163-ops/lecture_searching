@@ -39,19 +39,28 @@ def linear_search(searched_data, searched_number):
         idx += 1
     searched_dict["positions"] = positions #poskladani pod dane klice do slovniku
     searched_dict["count"] = count
-    return searched_dict
-
-
-
-
-
     return positions, count
+
+def binary_search(searched_data, searched_number):
+    left = 0
+    right = len(searched_data)
+    while left <= right:
+        middle = (left + right) // 2
+        if searched_data[middle] == searched_number:
+            return middle
+        elif searched_data[middle] < searched_number:
+            left = middle + 1
+        elif searched_data[middle] > searched_number:
+            left = middle - 1
+    return None
+
+
 
 def main():
     my_data = read_data("sequential.json","unordered_numbers")
-    searched_positions = linear_search()
-    print(my_data)
-
+    found_number = linear_search(my_data, 0)
+    found_numberb = binary_search(my_data, 18)
+    print(found_numberb)
 
 
 if __name__ == "__main__":
