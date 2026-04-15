@@ -64,7 +64,8 @@ def main():
     START_time = time.perf_counter()
     found_numberb = binary_search(my_data, 18)
     end_time = time.perf_counter()
-    print(found_numberb)                # dam timer pred funkci a po funkci
+    duration = end_time - START_time
+    print(duration)                # dam timer pred funkci a po funkci
 
 
 if __name__ == "__main__":
