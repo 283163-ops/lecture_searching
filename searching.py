@@ -1,8 +1,5 @@
-from pathlib import Path
+
 import json
-
-from lecture_searching.generators import unordered_sequence
-
 
 def read_data(file_name, field):
     """
@@ -20,9 +17,8 @@ def read_data(file_name, field):
             - None: If the field is not supported.
     """
     # get current working directory path
-    cwd_path = Path.cwd()
-    
-    file_path = cwd_path / file_name
+
+    file_path = "sequential.json"
     with open(file_path, "r") as file:
         data = json.load(file)
     if field in data.keys():
@@ -31,10 +27,31 @@ def read_data(file_name, field):
         return None
 
 
+def linear_search(searched_data, searched_number):
+    idx = 0
+    positions = []
+    count = 0
+    searched_dict = {}
+    while idx < len(searched_data):
+        if searched_data[idx] == searched_number:
+            count +=1
+            positions.append(idx)
+        idx += 1
+    searched_dict["positions"] = positions #poskladani pod dane klice do slovniku
+    searched_dict["count"] = count
+    return searched_dict
+
+
+
+
+
+    return positions, count
 
 def main():
     my_data = read_data("sequential.json","unordered_numbers")
+    searched_positions = linear_search()
     print(my_data)
+
 
 
 if __name__ == "__main__":
