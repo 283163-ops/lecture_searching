@@ -1,5 +1,7 @@
 
 import json
+import time
+
 
 def read_data(file_name, field):
     """
@@ -54,13 +56,15 @@ def binary_search(searched_data, searched_number):
             left = middle - 1
     return None
 
-
+# je to slozitost (log n)
 
 def main():
     my_data = read_data("sequential.json","unordered_numbers")
     found_number = linear_search(my_data, 0)
+    START_time = time.perf_counter()
     found_numberb = binary_search(my_data, 18)
-    print(found_numberb)
+    end_time = time.perf_counter()
+    print(found_numberb)                # dam timer pred funkci a po funkci
 
 
 if __name__ == "__main__":
