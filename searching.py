@@ -1,6 +1,8 @@
 
 import json
 import time
+from generators import unordered_sequence, ordered_sequence
+import matplotlib.pyplot as plt
 
 
 def read_data(file_name, field):
@@ -55,8 +57,23 @@ def binary_search(searched_data, searched_number):
         elif searched_data[middle] > searched_number:
             left = middle - 1
     return None
-
 # je to slozitost (log n)
+
+def test_complexit(list_of_n):
+    ordered_data = ordered_sequence()
+    duration = 0
+    repetion = 100
+    for n in list_of_n:
+        unordered_data = unordered_sequence()
+        found_number = linear_search(unordered_data, number)
+
+    plt.plot(list_of_n, times_linear) # nedodelano / test complexity
+    plt.plot(list_of_n, times_binary)
+
+    plt.xlabel("Velikost vstupu")
+    plt.ylabel("Čas [s]")
+    plt.title("Ukázkový graf měření")
+    plt.show()
 
 def main():
     my_data = read_data("sequential.json","unordered_numbers")
